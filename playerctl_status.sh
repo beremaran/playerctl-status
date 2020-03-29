@@ -16,7 +16,7 @@ if [ "${PLAYING_PLAYER}" == "" ]; then
     echo "It's pretty quiet here ...";
 else
     LENGTH_FORMAT=""
-    LENGTH_CHECK=$(playerctl -p ${PLAYING_PLAYER} metadata --format "{{ duration(mpris:length) }}")
+    LENGTH_CHECK=$(playerctl -p ${PLAYING_PLAYER} metadata --format "{{ duration(mpris:length) }}" 2>/dev/null)
     if [ "${LENGTH_CHECK}" != "" ]; then
         LENGTH_FORMAT=" - {{ duration(position) }}/{{ duration(mpris:length) }}"
     fi
