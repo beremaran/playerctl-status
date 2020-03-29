@@ -21,5 +21,5 @@ else
         LENGTH_FORMAT=" - {{ duration(position) }}/{{ duration(mpris:length) }}"
     fi
 
-    echo $(playerctl -p "${PLAYING_PLAYER}" metadata --format "{{ uc(status) }}: {{ artist }} - {{ title }}${LENGTH_FORMAT}");
+    echo $(playerctl -p "${PLAYING_PLAYER}" metadata --format "{{ playerName }} {{ uc(status) }}: {{ artist }} - {{ title }}${LENGTH_FORMAT}");
 fi
